@@ -2,38 +2,38 @@
 import { initializeApp } from "firebase/app";
 
 import {
-    ​​  GoogleAuthProvider,
-    ​​  getAuth,
-    ​​  signInWithPopup,
-    ​​  signInWithEmailAndPassword,
-    ​​  createUserWithEmailAndPassword,
-    ​​  sendPasswordResetEmail,
-    ​​  signOut,
-​​} from "firebase/auth";
+    GoogleAuthProvider,
+    getAuth,
+    signInWithPopup,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    sendPasswordResetEmail,
+    signOut,
+} from "firebase/auth";
 
-​​import {
-    ​​  getFirestore,
-    ​​  query,
-    ​​  getDocs,
-    ​​  collection,
-    ​​  where,
-    ​​  addDoc,
-​​} from "firebase/firestore";
+ import {
+    getFirestore,
+    query,
+    getDocs,
+    collection,
+    where,
+    addDoc,
+} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCV8Bwzn_-fkeLQXgVAopCrVQwWS2k5VyI",
-  authDomain: "fir-recipe-webapp.firebaseapp.com",
-  projectId: "fir-recipe-webapp",
-  storageBucket: "fir-recipe-webapp.appspot.com",
-  messagingSenderId: "179963218245",
-  appId: "1:179963218245:web:6b96f2b272aadaa89c962c"
+    apiKey: "AIzaSyCV8Bwzn_-fkeLQXgVAopCrVQwWS2k5VyI",
+    authDomain: "fir-recipe-webapp.firebaseapp.com",
+    projectId: "fir-recipe-webapp",
+    storageBucket: "fir-recipe-webapp.appspot.com",
+    messagingSenderId: "179963218245",
+    appId: "1:179963218245:web:6b96f2b272aadaa89c962c"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-​​const auth = getAuth(app);
-​​const db = getFirestore(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 // Google auth
 const googleProvider = new GoogleAuthProvider();
@@ -95,4 +95,14 @@ const sendPasswordReset = async (email) => {
 
 const logout = () => {
     signOut(auth);
+};
+
+export {
+    auth,
+    db,
+    signInWithGoogle,
+    logInWithEmailAndPassword,
+    registerWithEmailAndPassword,
+    sendPasswordReset,
+    logout,
 };
