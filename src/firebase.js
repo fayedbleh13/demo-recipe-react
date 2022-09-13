@@ -13,12 +13,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "AIzaSyCV8Bwzn_-fkeLQXgVAopCrVQwWS2k5VyI",
+    authDomain: "fir-recipe-webapp.firebaseapp.com",
+    projectId: "fir-recipe-webapp",
+    storageBucket: "fir-recipe-webapp.appspot.com",
+    messagingSenderId: "179963218245",
+    appId: "1:179963218245:web:6b96f2b272aadaa89c962c"
   };
 
 // Initialize Firebase
