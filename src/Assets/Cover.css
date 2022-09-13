@@ -1,0 +1,8 @@
+.bg-brand {
+    @apply bg-cover bg-no-repeat bg-top;
+    background-image: linear-gradient(
+        rgba(18, 26, 46, 0.8),
+        rgba(18, 26, 46, 0.8)
+        ),
+        url("../Assets/Images/cover_img.jpg");
+}

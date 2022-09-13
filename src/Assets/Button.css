@@ -1,0 +1,8 @@
+.default-btn {
+    @apply px-6 pt-2.5 pb-2 bg-violet-500 text-white font-medium text-sm leading-normal uppercase rounded shadow-md hover:bg-violet-600 hover:shadow-lg focus:bg-violet-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-violet-700 active:shadow-lg active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01]  ease-in-out transform flex 
+}
+
+.input-btn {
+    @apply active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01]  ease-in-out transform py-4 bg-violet-500 rounded-xl text-white font-bold text-lg
+}
+
