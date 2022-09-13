@@ -1,25 +1,44 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './Pages/Auth/Login'
 import Register from './Pages/Auth/Register'
 import Reset from './Pages/Auth/ForgotPassword'
 import Cover from './Pages/Cover'
 import Dashboard from './Pages/Dashboard'
-import './Assets/App.css'
+import { AuthProvider } from './Context/AuthContext'
+import PrivateRoute from './Context/PrivateRoute'
+import GuestHeader from './Components/GuestHeader'
+import AuthHeader from './Components/AuthHeader'
+import RecipeDetails from './Pages/RecipeDetails'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
     return (
         <div className='app'>
-            <BrowserRouter>
-                <Routes>
-                    <Route exact path='/' element={<Cover />}/>
-                    <Route exact path='/login' element={<Login />}/>
-                    <Route exact path='/register' element={<Register />}/>
-                    <Route exact path='/reset' element={<Reset />}/>
-                    <Route exact path='/dashboard' element={<Dashboard />}/>
-                    <Route exact path='*'/>
-                </Routes>
-            </BrowserRouter>
+            <Toaster></Toaster>
+            <AuthProvider>
+                <BrowserRouter>
+                    <Routes>
+                        <Route element={<AuthHeader />}>
+                            <Route exact path='/dashboard' element={
+                                <PrivateRoute>
+                                    <Dashboard />
+                                </PrivateRoute>
+                            }/>
+                            <Route exact path='/recipe-details' element={
+                                <PrivateRoute>
+                                    <RecipeDetails />
+                                </PrivateRoute>
+                            }/>
+                        </Route>
+                        <Route element={<GuestHeader />} >
+                            <Route path='/login' element={<Login />}/>
+                            <Route path='/register' element={<Register />}/>
+                            <Route path='/reset' element={<Reset />}/>
+                            <Route path='/' element={<Cover />}/>
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </AuthProvider>
         </div>
     )
 }
