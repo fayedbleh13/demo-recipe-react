@@ -3,6 +3,6 @@ A demo project that utilizes edamam api for recipe search.
 
 Technlogies used
 - React
-- Firebase(Authentication and Firestore
+- Firebase(Authentication and Firestore)
 - TailwindCSS
 - Vite(Bundler)
